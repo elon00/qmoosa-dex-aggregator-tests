@@ -1,0 +1,31 @@
+{
+  "name": "@qmoosa/dex-aggregator-tests",
+  "version": "1.0.0",
+  "description": "DEX Aggregator Reality Gates — Multi-Repo Integration, Provenance Verification & Defense Suite",
+  "type": "module",
+  "scripts": {
+    "test:integrity": "node scripts/verify-source-integrity.mjs",
+    "test:integration": "node --test tests/integration.test.mjs",
+    "test:negative": "node --test tests/negative-control.test.mjs",
+    "verify:archive": "node scripts/verify-source-integrity.mjs --mode=archive",
+    "verify:source": "node scripts/verify-source-integrity.mjs --mode=source",
+    "verify:current-head": "node scripts/verify-source-integrity.mjs --mode=current-head",
+    "test": "npm run test:integrity && npm run test:integration && npm run test:negative",
+    "lint": "node --check tests/integration.test.mjs tests/negative-control.test.mjs scripts/verify-source-integrity.mjs"
+  },
+  "dependencies": {
+    "@qmoosa/dex-aggregator-protocol": "file:packages/qmoosa-dex-aggregator-protocol-1.0.0.tgz",
+    "@qmoosa/dex-aggregator-engine": "file:packages/qmoosa-dex-aggregator-engine-1.0.0.tgz",
+    "@qmoosa/dex-aggregator-sdk": "file:packages/qmoosa-dex-aggregator-sdk-1.0.0.tgz"
+  },
+  "keywords": [
+    "qmoosa",
+    "dex-aggregator",
+    "tests",
+    "integration",
+    "reality-gates",
+    "adversarial"
+  ],
+  "author": "elon00",
+  "license": "MIT"
+}

@@ -1,0 +1,30 @@
+{
+  "mission": "QMOOSA-DEX-AGGREGATOR-01",
+  "generatedAt": "2026-10-18T11:45:00Z",
+  "packages": [
+    {
+      "name": "@qmoosa/dex-aggregator-protocol",
+      "version": "1.0.0",
+      "repository": "elon00/qmoosa-dex-aggregator-protocol",
+      "sourceCommit": "530ac9ce0172c96f89b81b9c8f2810ca9ab6b3af",
+      "archivePath": "packages/qmoosa-dex-aggregator-protocol-1.0.0.tgz",
+      "sha256": "64e6655b56156b10047f2a539e7afeb75e61081b2f1031090135c86dc99a913a"
+    },
+    {
+      "name": "@qmoosa/dex-aggregator-engine",
+      "version": "1.0.0",
+      "repository": "elon00/qmoosa-dex-aggregator-engine",
+      "sourceCommit": "0f65bb111b4ea42a226a1687033bf5e1d93416da",
+      "archivePath": "packages/qmoosa-dex-aggregator-engine-1.0.0.tgz",
+      "sha256": "c12e9beca3b96a8ab5f642802e89a2e19e1738cc410727dc57bbe4e8dfb018cc"
+    },
+    {
+      "name": "@qmoosa/dex-aggregator-sdk",
+      "version": "1.0.0",
+      "repository": "elon00/qmoosa-dex-aggregator-sdk",
+      "sourceCommit": "9de875d2614b42a7d4a19f9a494cc0a0cbd211af",
+      "archivePath": "packages/qmoosa-dex-aggregator-sdk-1.0.0.tgz",
+      "sha256": "ca25ee36a50d20cb1eb2cc97c8f5e662e481781b191efd216285a5304aee93ee"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+name: Full-Spectrum DEX Aggregator Reality Gates & Invariant CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  reality-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tests repository
+        uses: actions/checkout@v4
+        with:
+          path: qmoosa-dex-aggregator-tests
+
+      - name: Checkout protocol repository (Pinned Commit)
+        uses: actions/checkout@v4
+        with:
+          repository: elon00/qmoosa-dex-aggregator-protocol
+          ref: 530ac9ce0172c96f89b81b9c8f2810ca9ab6b3af
+          path: qmoosa-dex-aggregator-protocol
+
+      - name: Checkout engine repository (Pinned Commit)
+        uses: actions/checkout@v4
+        with:
+          repository: elon00/qmoosa-dex-aggregator-engine
+          ref: 0f65bb111b4ea42a226a1687033bf5e1d93416da
+          path: qmoosa-dex-aggregator-engine
+
+      - name: Checkout sdk repository (Pinned Commit)
+        uses: actions/checkout@v4
+        with:
+          repository: elon00/qmoosa-dex-aggregator-sdk
+          ref: 9de875d2614b42a7d4a19f9a494cc0a0cbd211af
+          path: qmoosa-dex-aggregator-sdk
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: qmoosa-dex-aggregator-tests/package.json
+
+      - name: Install dependencies in sibling repositories
+        run: |
+          npm ci --prefix qmoosa-dex-aggregator-protocol
+          npm ci --prefix qmoosa-dex-aggregator-engine
+          npm ci --prefix qmoosa-dex-aggregator-sdk
+
+      - name: Install dependencies in tests repository
+        working-directory: qmoosa-dex-aggregator-tests
+        run: npm install
+
+      - name: Run Source & Package Integrity Gate (Archive Mode)
+        working-directory: qmoosa-dex-aggregator-tests
+        run: npm run verify:archive
+
+      - name: Run Strict Current-HEAD Alignment Gate
+        working-directory: qmoosa-dex-aggregator-tests
+        run: npm run verify:current-head
+
+      - name: Run Hermetic Source Derivation & Canonical Artifact Comparison Gate
+        working-directory: qmoosa-dex-aggregator-tests
+        run: npm run verify:source
+
+      - name: Run Integration Tests
+        working-directory: qmoosa-dex-aggregator-tests
+        run: npm run test:integration
+
+      - name: Run Adversarial Negative Control Suite
+        working-directory: qmoosa-dex-aggregator-tests
+        run: npm run test:negative
+
+      - name: Static Lint Check
+        working-directory: qmoosa-dex-aggregator-tests
+        run: npm run lint
