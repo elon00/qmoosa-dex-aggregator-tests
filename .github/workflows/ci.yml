@@ -26,14 +26,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: elon00/qmoosa-dex-aggregator-engine
-          ref: 0f65bb111b4ea42a226a1687033bf5e1d93416da
+          ref: d80b42d1c41cb6f2653aedb89dab3817f9976e47
           path: qmoosa-dex-aggregator-engine
 
       - name: Checkout sdk repository (Pinned Commit)
         uses: actions/checkout@v4
         with:
           repository: elon00/qmoosa-dex-aggregator-sdk
-          ref: 9de875d2614b42a7d4a19f9a494cc0a0cbd211af
+          ref: 1413377b7ae4239ef6150ef3fd131d208616ec66
           path: qmoosa-dex-aggregator-sdk
 
       - name: Setup Node.js
