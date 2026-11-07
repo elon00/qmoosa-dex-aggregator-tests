@@ -1,0 +1,50 @@
+{
+  "engine": "REA_Reverse_Engineer_Anything",
+  "status": "STRUCTURE_RECONSTRUCTED",
+  "analyzed_files": 14,
+  "manifest": {
+    "integrity-manifest.json": {
+      "bytes": 1230
+    },
+    "package-lock.json": {
+      "bytes": 1498
+    },
+    "package.json": {
+      "bytes": 1390
+    },
+    "packages\\qmoosa-dex-aggregator-engine-1.0.0.tgz": {
+      "bytes": 12929
+    },
+    "packages\\qmoosa-dex-aggregator-protocol-1.0.0.tgz": {
+      "bytes": 145514
+    },
+    "packages\\qmoosa-dex-aggregator-sdk-1.0.0.tgz": {
+      "bytes": 4571
+    },
+    "scripts\\rea_inspector.py": {
+      "bytes": 1485
+    },
+    "scripts\\rsi_engine.py": {
+      "bytes": 2039
+    },
+    "scripts\\verify-source-integrity.mjs": {
+      "bytes": 7992
+    },
+    "tests\\integration.test.mjs": {
+      "bytes": 3260
+    },
+    "tests\\negative-control.test.mjs": {
+      "bytes": 4195
+    },
+    "tests\\reality_check_harness.py": {
+      "bytes": 1250
+    },
+    ".github\\workflows\\ci.yml": {
+      "bytes": 2649
+    },
+    ".github\\workflows\\qmoosa-rsi-rea-sync.yml": {
+      "bytes": 531
+    }
+  },
+  "timestamp": 1794022523
+}
