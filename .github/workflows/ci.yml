@@ -11,26 +11,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout tests repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: qmoosa-dex-aggregator-tests
 
       - name: Checkout protocol repository (Pinned Commit)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: elon00/qmoosa-dex-aggregator-protocol
           ref: 530ac9ce0172c96f89b81b9c8f2810ca9ab6b3af
           path: qmoosa-dex-aggregator-protocol
 
       - name: Checkout engine repository (Pinned Commit)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: elon00/qmoosa-dex-aggregator-engine
           ref: d80b42d1c41cb6f2653aedb89dab3817f9976e47
           path: qmoosa-dex-aggregator-engine
 
       - name: Checkout sdk repository (Pinned Commit)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: elon00/qmoosa-dex-aggregator-sdk
           ref: 1413377b7ae4239ef6150ef3fd131d208616ec66
